@@ -16,7 +16,7 @@ from final_bot import parse_timetable
 
 # --- CONFIGURATION ---
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
-CLIENT_SECRETS_FILE = "web_credentials.json"
+CLIENT_SECRETS_FILE = "web_credential.json"
 
 # PASTE YOUR NEON CONNECTION STRING HERE
 DATABASE_URL = os.getenv("DATABASE_URL")
