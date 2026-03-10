@@ -246,7 +246,7 @@ def process_sync(department: str = Form(...), level: str = Form(...)):
     flow = Flow.from_client_secrets_file(
         CLIENT_SECRETS_FILE,
         scopes=SCOPES,
-        redirect_uri="http://localhost:8000/auth/callback"
+        redirect_uri="https://timetable-bot-1-djo2.onrender.com/auth/callback"
     )
 
     # 3. The "Memory" Trick (State Parameter)
