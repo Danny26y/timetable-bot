@@ -1,0 +1,20 @@
+# Environments
+.venv/
+.env
+
+# Caches & IDE
+__pycache__/
+.idea/
+
+# Database
+*.db
+timetables.db
+
+# Secrets & Keys (DO NOT UPLOAD)
+*.json
+web_credentials.json
+credentials.json
+token.json
+
+# PDFs
+*.pdf
