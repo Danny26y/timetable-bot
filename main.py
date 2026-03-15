@@ -276,10 +276,12 @@ def auth_callback(request: Request, code: str, state: str):
     flow = Flow.from_client_secrets_file(
         CLIENT_SECRETS_FILE,
         scopes=SCOPES,
-        redirect_uri="http://localhost:8000/auth/callback"
+        redirect_uri="https://timetable-bot-1-djo2.onrender.com/auth/callback"
     )
     # Rebuild the full URL to pass Google's security check
-    flow.fetch_token(authorization_response=str(request.url))
+    # Force the URL to HTTPS because Render's proxy strips it
+    secure_url = str(request.url).replace("http://", "https://")
+    flow.fetch_token(authorization_response=secure_url)
     creds = flow.credentials
 
     # 3. Pull the saved timetable from the Cloud Database
